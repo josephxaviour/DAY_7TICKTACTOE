@@ -270,5 +270,18 @@ else { System.out.println("congratulations!"+ winner +"'s have won! thanks for p
         }
 
 
+public static void main(String[]args){
+        Scanner in=new Scanner(System.in);
+        startGame();
+        System.out.println("type YES to continue and NO to stop");
+        String replay=in.nextLine();
+
+        if(replay == "YES" ){
+            startGame();
+        }
+}
+        
+
+
 
 
