@@ -240,25 +240,35 @@ public class TicTacToeProblem {
         String winner = null;
         turn = "x";
         System.out.println("x will play first. Enter a slot no to place x in:");
-        for (int a=0 ; a<9; a++) {
-            board[a] = String.valueOf(a+1);
+        for (int a = 0; a < 9; a++) {
+            board[a] = String.valueOf(a + 1);
         }
-while(winner == null) {
-    int numinput = in.nextInt();
+        while (winner == null) {
+            int numinput = in.nextInt();
 
-    if (board[numinput - 1].equals(
-            String.valueOf(numinput))) {
-        board[numinput - 1] = turn;
-        if (turn.equals("x")) {
-            turn = "0";
-        } else {
-            turn = "x";
+            if (board[numinput - 1].equals(
+                    String.valueOf(numinput))) {
+                board[numinput - 1] = turn;
+                if (turn.equals("x")) {
+                    turn = "0";
+                } else {
+                    turn = "x";
+                }
+                printBoard();
+                winner = checkWinner();
+            } else {
+                System.out.println("slot already taken; re-enter slot no;");
+            }
         }
-        printBoard();
-        winner = checkWinner();
-    } else {
-        System.out.println("slot already taken; re-enter slot no;");
     }
 }
-}
-}
+
+if (winner.equalsIgnoreCase("draw")) {
+    System.out.println("it's a draw! thanks for playing");
+    }
+else { System.out.println("congratulations!"+ winner +"'s have won! thanks for playing");
+        }
+
+
+
+
